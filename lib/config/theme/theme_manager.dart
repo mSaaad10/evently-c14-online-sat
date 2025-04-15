@@ -18,6 +18,9 @@ class ThemeManager {
               fontStyle: FontStyle.normal)),
       primaryColor: ColorsManager.blue,
       scaffoldBackgroundColor: ColorsManager.light,
+      iconTheme: IconThemeData(
+        color: ColorsManager.white,
+      ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: ColorsManager.blue,
         foregroundColor: ColorsManager.white,
@@ -27,7 +30,7 @@ class ThemeManager {
           color: ColorsManager.white,
         )),
       ),
-      bottomAppBarTheme: BottomAppBarTheme(
+      bottomAppBarTheme: const BottomAppBarTheme(
         color: ColorsManager.blue,
         shape: CircularNotchedRectangle(),
       ),
@@ -92,6 +95,14 @@ class ThemeManager {
             fontSize: 18.sp,
             fontWeight: FontWeight.w500,
             color: ColorsManager.blue),
+        titleSmall: GoogleFonts.inter(
+            fontSize: 14.sp,
+            color: ColorsManager.white,
+            fontWeight: FontWeight.normal),
+        titleLarge: GoogleFonts.inter(
+            fontSize: 24.sp,
+            color: ColorsManager.white,
+            fontWeight: FontWeight.bold),
       ));
   static final ThemeData dark =
       ThemeData(scaffoldBackgroundColor: ColorsManager.dark);

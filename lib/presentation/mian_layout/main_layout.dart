@@ -26,12 +26,16 @@ class _MainLayoutState extends State<MainLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
-      ),
+      floatingActionButton: buildFab(),
       body: tabs[selectedIndex],
       bottomNavigationBar: buildBottomNavBar(),
+    );
+  }
+
+  Widget buildFab() {
+    return FloatingActionButton(
+      onPressed: () {},
+      child: const Icon(Icons.add),
     );
   }
 
