@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ThemeManager {
   static final ThemeData light = ThemeData(
+      useMaterial3: false,
       appBarTheme: AppBarTheme(
           iconTheme: const IconThemeData(color: ColorsManager.black),
           centerTitle: true,
@@ -17,6 +18,25 @@ class ThemeManager {
               fontStyle: FontStyle.normal)),
       primaryColor: ColorsManager.blue,
       scaffoldBackgroundColor: ColorsManager.light,
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: ColorsManager.blue,
+        foregroundColor: ColorsManager.white,
+        shape: StadiumBorder(
+            side: BorderSide(
+          width: 4.w,
+          color: ColorsManager.white,
+        )),
+      ),
+      bottomAppBarTheme: BottomAppBarTheme(
+        color: ColorsManager.blue,
+        shape: CircularNotchedRectangle(),
+      ),
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: ColorsManager.white,
+          unselectedItemColor: ColorsManager.white),
       inputDecorationTheme: InputDecorationTheme(
         prefixIconColor: ColorsManager.grey,
         labelStyle: GoogleFonts.inter(
