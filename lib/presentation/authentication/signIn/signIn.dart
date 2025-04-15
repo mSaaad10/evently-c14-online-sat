@@ -23,17 +23,15 @@ class _SignInState extends State<SignIn> {
       body: Column(
         children: [
           Expanded(child: Image.asset(ImageAssets.logo)),
-          SizedBox(
-            height: 16.h,
-          ),
           Expanded(
             flex: 4,
             child: Padding(
-              padding: REdgeInsets.symmetric(horizontal: 16.0),
+              padding: REdgeInsets.symmetric(horizontal: 16.0, vertical: 24),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const CustomTextFormField(
+                    keyboardType: TextInputType.emailAddress,
                     labelText: "Email",
                     prefixIcon: Icons.email_sharp,
                   ),
@@ -41,6 +39,7 @@ class _SignInState extends State<SignIn> {
                     height: 16.h,
                   ),
                   CustomTextFormField(
+                      keyboardType: TextInputType.visiblePassword,
                       labelText: "Password",
                       prefixIcon: Icons.lock,
                       isSecure: secure,
