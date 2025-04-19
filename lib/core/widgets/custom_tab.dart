@@ -1,4 +1,3 @@
-import 'package:evently_c14_online_sat/core/resources/colors_manager.dart';
 import 'package:evently_c14_online_sat/data/DM/category_DM.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,25 +6,35 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CustomTab extends StatelessWidget {
   const CustomTab(
-      {super.key, required this.categoryDM, required this.isSelected});
+      {super.key,
+      required this.categoryDM,
+      required this.isSelected,
+      required this.selectedTabBg,
+      required this.unselectedTabBg,
+      required this.selectedLabelColor,
+      required this.unselectedLabelColor});
 
   final CategoryDM categoryDM;
   final bool isSelected;
+  final Color selectedTabBg;
+  final Color unselectedTabBg;
+  final Color selectedLabelColor;
+  final Color unselectedLabelColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: REdgeInsets.symmetric(vertical: 10, horizontal: 16),
       decoration: BoxDecoration(
-          color: isSelected ? ColorsManager.light : Colors.transparent,
+          color: isSelected ? selectedTabBg : unselectedTabBg,
           borderRadius: BorderRadius.circular(46.r),
-          border: Border.all(width: 1.w, color: ColorsManager.white)),
+          border: Border.all(width: 1.w, color: selectedTabBg)),
       child: Row(
         children: [
           SvgPicture.asset(
             categoryDM.iconPath,
             colorFilter: ColorFilter.mode(
-                isSelected ? ColorsManager.blue : ColorsManager.white,
+                isSelected ? selectedLabelColor : unselectedLabelColor,
                 BlendMode.srcIn),
           ),
           SizedBox(
@@ -36,7 +45,7 @@ class CustomTab extends StatelessWidget {
             style: GoogleFonts.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
-                color: isSelected ? ColorsManager.blue : ColorsManager.white),
+                color: isSelected ? selectedLabelColor : unselectedLabelColor),
           ),
         ],
       ),

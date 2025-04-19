@@ -38,7 +38,10 @@ class Home extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    const Icon(Icons.location_on_outlined),
+                    const Icon(
+                      Icons.location_on_outlined,
+                      color: ColorsManager.white,
+                    ),
                     Text(
                       "Cairo, Egypt",
                       style: Theme.of(context).textTheme.titleSmall,
@@ -48,7 +51,13 @@ class Home extends StatelessWidget {
                 SizedBox(
                   height: 8.h,
                 ),
-                CustomTabBar(categories: ConstantManager.categories)
+                CustomTabBar(
+                  categories: ConstantManager.categories,
+                  selectedTabBg: ColorsManager.light,
+                  unselectedTabBg: Colors.transparent,
+                  selectedLabelColor: ColorsManager.blue,
+                  unselectedLabelColor: ColorsManager.light,
+                )
               ],
             ),
           ),

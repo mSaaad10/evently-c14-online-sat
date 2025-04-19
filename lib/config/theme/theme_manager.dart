@@ -7,19 +7,19 @@ class ThemeManager {
   static final ThemeData light = ThemeData(
       useMaterial3: false,
       appBarTheme: AppBarTheme(
-          iconTheme: const IconThemeData(color: ColorsManager.black),
+          iconTheme: const IconThemeData(color: ColorsManager.blue),
           centerTitle: true,
           color: ColorsManager.light,
           foregroundColor: ColorsManager.black10,
           titleTextStyle: GoogleFonts.roboto(
-              fontSize: 22.sp,
-              color: ColorsManager.black10,
+              fontSize: 18.sp,
+              color: ColorsManager.blue,
               fontWeight: FontWeight.normal,
               fontStyle: FontStyle.normal)),
       primaryColor: ColorsManager.blue,
       scaffoldBackgroundColor: ColorsManager.light,
-      iconTheme: IconThemeData(
-        color: ColorsManager.white,
+      iconTheme: const IconThemeData(
+        color: ColorsManager.black1C,
       ),
       cardColor: ColorsManager.light,
       cardTheme: CardTheme(
