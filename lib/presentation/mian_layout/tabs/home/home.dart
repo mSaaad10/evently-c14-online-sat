@@ -1,6 +1,8 @@
 import 'package:evently_c14_online_sat/core/resources/colors_manager.dart';
 import 'package:evently_c14_online_sat/core/resources/constant_manager.dart';
+import 'package:evently_c14_online_sat/core/widgets/custom_event.dart';
 import 'package:evently_c14_online_sat/core/widgets/custom_tab_bar.dart';
+import 'package:evently_c14_online_sat/data/DM/eventDM.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -50,7 +52,19 @@ class Home extends StatelessWidget {
               ],
             ),
           ),
-        )
+        ),
+        Expanded(
+            child: ListView.builder(
+          itemBuilder: (context, index) => CustomEvent(
+              event: EventDM(
+            category: "Meeting",
+            title: "Meeting for Updating The Development Method",
+            description: "Meeting for Updating The Development Method",
+            date: DateTime.now(),
+            time: TimeOfDay.now(),
+          )),
+          itemCount: 10,
+        ))
       ],
     );
   }
