@@ -108,6 +108,14 @@ class ThemeManager {
             fontSize: 24.sp,
             color: ColorsManager.white,
             fontWeight: FontWeight.bold),
+        headlineMedium: GoogleFonts.inter(
+            fontSize: 18.sp,
+            color: ColorsManager.white,
+            fontWeight: FontWeight.bold),
+        headlineSmall: GoogleFonts.inter(
+            fontSize: 14.sp,
+            color: ColorsManager.white,
+            fontWeight: FontWeight.w500),
         labelMedium: GoogleFonts.inter(
             fontSize: 20.sp,
             color: ColorsManager.blue,
@@ -116,6 +124,14 @@ class ThemeManager {
             fontSize: 14.sp,
             color: ColorsManager.black1C,
             fontWeight: FontWeight.bold),
+        displayMedium: GoogleFonts.inter(
+            fontSize: 20.sp,
+            color: ColorsManager.black1C,
+            fontWeight: FontWeight.bold),
+        displaySmall: GoogleFonts.inter(
+            fontSize: 16.sp,
+            color: ColorsManager.blue,
+            fontWeight: FontWeight.w500),
       ));
   static final ThemeData dark =
       ThemeData(scaffoldBackgroundColor: ColorsManager.dark);
