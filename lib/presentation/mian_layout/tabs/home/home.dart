@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-              color: ColorsManager.blue,
+              color: Theme.of(context).primaryColor,
               borderRadius:
                   BorderRadius.vertical(bottom: Radius.circular(16.r))),
           child: Padding(

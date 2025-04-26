@@ -2,6 +2,7 @@ import 'package:evently_c14_online_sat/core/resources/assets_manager.dart';
 import 'package:evently_c14_online_sat/core/widgets/custom_elevated_button.dart';
 import 'package:evently_c14_online_sat/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUp extends StatefulWidget {
@@ -19,7 +20,9 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Register"),
+        title: Text(
+          AppLocalizations.of(context)!.register,
+        ),
       ),
       body: Column(
         children: [
@@ -31,23 +34,23 @@ class _SignUpState extends State<SignUp> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    const CustomTextFormField(
+                    CustomTextFormField(
                         keyboardType: TextInputType.name,
-                        labelText: "Name",
+                        labelText: AppLocalizations.of(context)!.name,
                         prefixIcon: Icons.person),
                     SizedBox(
                       height: 16.h,
                     ),
-                    const CustomTextFormField(
+                    CustomTextFormField(
                         keyboardType: TextInputType.emailAddress,
-                        labelText: "Email",
+                        labelText: AppLocalizations.of(context)!.email,
                         prefixIcon: Icons.email_rounded),
                     SizedBox(
                       height: 16.h,
                     ),
                     CustomTextFormField(
                       keyboardType: TextInputType.visiblePassword,
-                      labelText: "Password",
+                      labelText: AppLocalizations.of(context)!.password,
                       prefixIcon: Icons.lock,
                       suffixIcon: securePassword
                           ? Icons.visibility_off
@@ -60,7 +63,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                     CustomTextFormField(
                       keyboardType: TextInputType.visiblePassword,
-                      labelText: "Re-Password",
+                      labelText: AppLocalizations.of(context)!.re_password,
                       prefixIcon: Icons.lock,
                       suffixIcon: secureRePassword
                           ? Icons.visibility_off
@@ -71,7 +74,9 @@ class _SignUpState extends State<SignUp> {
                     SizedBox(
                       height: 16.h,
                     ),
-                    CustomElevatedButton(title: "Sign-Up", onPress: () {})
+                    CustomElevatedButton(
+                        title: AppLocalizations.of(context)!.register,
+                        onPress: () {})
                   ],
                 ),
               ))

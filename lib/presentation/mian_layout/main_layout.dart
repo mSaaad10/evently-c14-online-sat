@@ -5,6 +5,7 @@ import 'package:evently_c14_online_sat/presentation/mian_layout/tabs/home/home.d
 import 'package:evently_c14_online_sat/presentation/mian_layout/tabs/map/map.dart';
 import 'package:evently_c14_online_sat/presentation/mian_layout/tabs/profile/profile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MainLayout extends StatefulWidget {
@@ -54,19 +55,19 @@ class _MainLayoutState extends State<MainLayout> {
             BottomNavigationBarItem(
                 activeIcon: SvgPicture.asset(SvgAssets.selectedHomeIcon),
                 icon: SvgPicture.asset(SvgAssets.home),
-                label: "Home"),
+                label: AppLocalizations.of(context)!.home),
             BottomNavigationBarItem(
                 activeIcon: SvgPicture.asset(SvgAssets.selectedMapIcon),
                 icon: SvgPicture.asset(SvgAssets.map),
-                label: "Map"),
+                label: AppLocalizations.of(context)!.map),
             BottomNavigationBarItem(
                 activeIcon: SvgPicture.asset(SvgAssets.selectedFavIcon),
                 icon: SvgPicture.asset(SvgAssets.fav),
-                label: "Favourite"),
+                label: AppLocalizations.of(context)!.favourite),
             BottomNavigationBarItem(
                 activeIcon: SvgPicture.asset(SvgAssets.selectedProfileIcon),
                 icon: SvgPicture.asset(SvgAssets.profile),
-                label: "Profile"),
+                label: AppLocalizations.of(context)!.profile),
           ]),
     );
   }

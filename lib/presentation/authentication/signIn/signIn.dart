@@ -5,6 +5,7 @@ import 'package:evently_c14_online_sat/core/widgets/custom_text_button.dart';
 import 'package:evently_c14_online_sat/core/widgets/custom_text_form_field.dart';
 import 'package:evently_c14_online_sat/presentation/authentication/widgets/custom_divider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignIn extends StatefulWidget {
@@ -30,9 +31,9 @@ class _SignInState extends State<SignIn> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const CustomTextFormField(
+                  CustomTextFormField(
                     keyboardType: TextInputType.emailAddress,
-                    labelText: "Email",
+                    labelText: AppLocalizations.of(context)!.email,
                     prefixIcon: Icons.email_sharp,
                   ),
                   SizedBox(
@@ -40,7 +41,7 @@ class _SignInState extends State<SignIn> {
                   ),
                   CustomTextFormField(
                       keyboardType: TextInputType.visiblePassword,
-                      labelText: "Password",
+                      labelText: AppLocalizations.of(context)!.password,
                       prefixIcon: Icons.lock,
                       isSecure: secure,
                       suffixIcon:
@@ -51,10 +52,12 @@ class _SignInState extends State<SignIn> {
                   ),
                   CustomTextButton(
                     alignment: Alignment.centerRight,
-                    title: "Forget Password?",
+                    title: AppLocalizations.of(context)!.forget_password,
                     onPress: () {},
                   ),
-                  CustomElevatedButton(title: "Sign-In", onPress: () {}),
+                  CustomElevatedButton(
+                      title: AppLocalizations.of(context)!.login,
+                      onPress: () {}),
                   SizedBox(
                     height: 8.h,
                   ),
@@ -62,17 +65,23 @@ class _SignInState extends State<SignIn> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Don’t Have Account? ",
+                        AppLocalizations.of(context)!.dont_have_account,
                         style: Theme.of(context).textTheme.bodySmall,
                       ),
-                      CustomTextButton(title: "Create Account", onPress: () {})
+                      CustomTextButton(
+                          title: AppLocalizations.of(context)!.create_account,
+                          onPress: () {})
                     ],
                   ),
-                  const CustomDivider(text: "Or"),
+                  CustomDivider(
+                    text: AppLocalizations.of(context)!.or,
+                  ),
                   SizedBox(
                     height: 16.h,
                   ),
-                  CustomButton(title: "Login With Google", onTap: () {}),
+                  CustomButton(
+                      title: AppLocalizations.of(context)!.login_with_google,
+                      onTap: () {}),
                 ],
               ),
             ),

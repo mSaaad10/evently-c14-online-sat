@@ -20,7 +20,7 @@ class CustomEvent extends StatelessWidget {
         decoration: BoxDecoration(
             border: Border.all(color: ColorsManager.blue, width: 1.w),
             borderRadius: BorderRadius.circular(16.r),
-            image: DecorationImage(
+            image: const DecorationImage(
                 fit: BoxFit.fill, image: AssetImage(ImageAssets.birthday))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

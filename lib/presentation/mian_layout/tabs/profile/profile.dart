@@ -1,6 +1,7 @@
 import 'package:evently_c14_online_sat/core/widgets/custom_drop_down_menu.dart';
 import 'package:evently_c14_online_sat/core/widgets/custom_profile_header.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Profile extends StatefulWidget {
@@ -27,16 +28,19 @@ class _ProfileState extends State<Profile> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomDropDownMenu(
-                title: "Language",
+                title: AppLocalizations.of(context)!.language,
                 textView: selectedLang,
                 menuItems: ["English", "عربي"],
                 onChange: _onLanguageChange,
               ),
               SizedBox(height: 16.h),
               CustomDropDownMenu(
-                  title: "Theme",
+                  title: AppLocalizations.of(context)!.theme,
                   textView: selectedTheme,
-                  menuItems: ["Light", "Dark"],
+                  menuItems: [
+                    AppLocalizations.of(context)!.light,
+                    AppLocalizations.of(context)!.dark,
+                  ],
                   onChange: _onThemeChange)
             ],
           ),
