@@ -1,8 +1,10 @@
 import 'package:evently_c14_online_sat/core/widgets/custom_drop_down_menu.dart';
 import 'package:evently_c14_online_sat/core/widgets/custom_profile_header.dart';
+import 'package:evently_c14_online_sat/provider/config_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -13,10 +15,13 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   String selectedLang = "English";
-  String selectedTheme = "Light";
+
+  late ConfigProvider configProvider;
 
   @override
   Widget build(BuildContext context) {
+    configProvider = Provider.of<ConfigProvider>(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -29,14 +34,16 @@ class _ProfileState extends State<Profile> {
             children: [
               CustomDropDownMenu(
                 title: AppLocalizations.of(context)!.language,
-                textView: selectedLang,
+                textView: configProvider.isEnglish ? "English" : "عربي",
                 menuItems: ["English", "عربي"],
                 onChange: _onLanguageChange,
               ),
               SizedBox(height: 16.h),
               CustomDropDownMenu(
                   title: AppLocalizations.of(context)!.theme,
-                  textView: selectedTheme,
+                  textView: configProvider.isDark
+                      ? AppLocalizations.of(context)!.dark
+                      : AppLocalizations.of(context)!.light,
                   menuItems: [
                     AppLocalizations.of(context)!.light,
                     AppLocalizations.of(context)!.dark,
@@ -50,14 +57,15 @@ class _ProfileState extends State<Profile> {
   }
 
   void _onThemeChange(String? newTheme) {
-    setState(() {
-      selectedTheme = newTheme!;
-    });
+    /// change current theme based new theme
+    configProvider.changeAppTheme(
+        newTheme == AppLocalizations.of(context)!.light
+            ? ThemeMode.light
+            : ThemeMode.dark);
   }
 
   void _onLanguageChange(String? newLang) {
-    setState(() {
-      selectedLang = newLang!;
-    });
+    String lang = newLang == "English" ? "en" : "ar";
+    configProvider.changeAppLang(lang);
   }
 }
